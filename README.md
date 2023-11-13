@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a LOTR themed blog utilizing Rails 7, CSS, and devise for authentication.
 
-Things you may want to cover:
+### This project utilizes ###
+  - Rails 7.0.8
+  - Devise 4.9.3
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### To see it run locally ###
+  1. pull the repo down
+  2. run migrations
+  3. run local server
+  4. create a user
+  5. enter Blog End
