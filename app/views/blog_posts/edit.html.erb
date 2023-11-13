@@ -1,0 +1,14 @@
+<div>
+  <div class="container">
+    <span>Back to <a href="/">Blog End</a></span>
+  </div>
+  <%= render partial: "form", locals: {blog_post: @blog_post} %>
+
+  <div class="marg-top-1 marg-left-1">
+   <%= button_to "Cast this Post into the fires of Mordor", 
+      @blog_post, class: "post-action-btn post-action-btn-text", 
+      method: :delete, 
+      data: {turbo_confirm: "Destroy it!"} %>
+  </div>
+<div>
+

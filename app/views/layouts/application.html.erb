@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bilbo Bloggins</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <p class="notice marg-gutter-1"><%= notice %></p>
+    <p class="alert marg-gutter-1"><%= alert %></p>
+    <div class="marg-gutter-1">
+      <%= yield %>
+    </div>
+  </body>
+</html>

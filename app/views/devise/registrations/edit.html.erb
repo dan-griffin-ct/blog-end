@@ -1,0 +1,48 @@
+<div class="marg-gutter-1">
+  <h2>Edit Your Profile</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field marg-top-1">
+      <%= f.label :email %><br />
+      <div class="post-form-field"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field marg-top-1">
+      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <div class="post-form-field"><%= f.password_field :password, autocomplete: "new-password" %></div>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+
+    <div class="field marg-top-1">
+      <%= f.label :password_confirmation %><br />
+      <div class="post-form-field"><%= f.password_field :password_confirmation, autocomplete: "new-password" %></div>
+    </div>
+
+    <div class="field marg-top-1">
+      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <div class="post-form-field"><%= f.password_field :current_password, autocomplete: "current-password" %></div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update", class: "marg-top-1 post-action-btn-text post-action-btn" %>
+    </div>
+  <% end %>
+
+
+  <div class="marg-top-1">
+    Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %>
+  </div>
+
+  <div class="marg-top-1">
+    <%= link_to "Back", :back %>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="post-index">
+  <div class="title">
+    <h2>~~~~~~~~~ Welcome to Blog End ~~~~~~~~~</h2>
+  </div>
+
+  <div class="post-list marg-top-1 grid-container">
+    <% @blog_posts.each do |blog_post| %>
+      <div class="card post-item grid-item">
+        <div class="container">
+          <span class="post-created-text"><%= blog_post.created_at.strftime("%B %e, %Y")%></span>
+          <p class="post-title"><%= link_to blog_post.title, blog_post %></p>
+          <p><%= blog_post.body %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+  <div>
+    <% if user_signed_in? %>
+      <div class="create-post"> 
+        <button class="post-action-btn"><%= link_to 'Create a Post', new_blog_post_path %></button>
+      </div>
+    <% else %>
+        <div class="marg-top-1 marg-left-1">
+          <%= button_to "Enter Blog End", new_user_session_path, class: "post-action-btn post-action-btn-text" %>
+        </div>
+    <% end %>
+    <a target="_blank" href="https://www.pinterest.com/PeteBits25/">
+      <%= image_tag("gollum.png", width: "200px", height: "200px") %>
+    </a>
+    <% if user_signed_in? %>
+      <%= button_to "Leave the Shire", destroy_user_session_path, method: :delete, class: "post-action-btn post-action-btn-text" %>
+    <% end %>
+  </div>
+</div>

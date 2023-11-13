@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="container">
+    <span>Back to <a href="/">Blog End</a></span>
+  </div>
+
+  <div class="container card">
+    <p class="post-title"><%= @blog_post.title %></p>
+    <p><%= @blog_post.body %>
+  </div>
+
+  <div class="marg-top-1">
+    <button class="post-action-btn"><%= link_to 'Edit this post', edit_blog_post_path %></button>
+  </div>
+</div>

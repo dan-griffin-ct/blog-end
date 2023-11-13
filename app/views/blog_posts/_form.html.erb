@@ -1,0 +1,28 @@
+<div class="container card">
+    <%= form_with model: @blog_post do |form| %>
+      <% if form.object.errors.any? %>
+        <div>
+          <% form.object.errors.full_messages.each do |message| %>
+            <div>
+                <p><%= message %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      <div>
+       <p>Title</p>
+        <div>
+          <%= form.text_field :title, class: "post-form-field" %>
+        </div>
+      </div>
+
+      <div>
+        <p>Body</p>
+        <%= form.text_area :body, class: "post-form-field"  %>
+      </div>
+      <div class="marg-top-1">
+         <button class="post-action-btn post-action-btn-text" type="submit">Submit</button>
+      </div>
+    <% end %>
+  </div>
+</div>
